@@ -1,0 +1,24 @@
+services:
+  # --- 第一部分：安全代理服務 (The Guard) ---
+  docker-proxy:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: docker-socket-proxy
+    restart: always
+    privileged: true # 必須開啟才能存取宿主機的 socket
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # 唯讀模式掛載原始 socket
+    environment:
+      # 【核心權限：設為 1 開啟】
+      - CONTAINERS=1   # 允許 AI 列出容器、查看狀態、抓取 Logs
+      - IMAGES=1       # 允許 AI 查看映像檔版本 (診斷更新問題)
+      - NETWORKS=1     # 允許 AI 檢查網路連接狀態
+      - STATS=1        # 允許 AI 讀取資源占用 (CPU/RAM) 診斷效能
+      - INFO=1         # 允許 AI 獲取 Docker 引擎基本資訊
+      
+      # 【安全防禦：設為 0 絕對禁止】
+      - POST=0         # 禁止所有「建立、啟動、停止、重啟」操作
+      - DELETE=0       # 禁止刪除任何容器或映像檔
+      - BUILD=0        # 禁止建置動作
+      - VOLUMES=0      # 禁止操作磁碟卷 (保護資料安全)
+      - SECRETS=0      # 禁止讀取 Docker Secrets (保護密鑰)
+      - AUTH=0         # 禁止讀取認證資訊
