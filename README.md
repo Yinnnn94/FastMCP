@@ -48,10 +48,7 @@ FastMCP 是一個提供多個實用工具的 MCP (Model Context Protocol) 伺服
   - 返回事件詳情及 Outlook 連結
   ![outlook_create_event](https://github.com/Yinnnn94/FastMCP/blob/main/img/outlook/outlook_create_event.png)
 
-#### 時間格式說明：
-- 所有事件時間均以 UTC+8（台灣時間）顯示
-- 輸入時間格式：ISO 8601（例：2026-07-28T14:00:00）
-- API 內部自動轉換為 UTC 與 Microsoft Graph 通訊
+API 內部自動轉換為 UTC 與 Microsoft Graph 通訊
 
 ## 開始使用
 
