@@ -13,9 +13,11 @@ FastMCP 是一個提供多個實用工具的 MCP (Model Context Protocol) 伺服
 ### 2. 📊 資料庫查詢與圖表繪製
 連線至資料庫執行查詢，並自動將結果視覺化為圖表。
 - 支援多種資料庫連線
+![DB_Connect](https://github.com/Yinnnn94/FastMCP/blob/main/img/DB_Connect/DB_Connect.png)
 - 自動圖表生成
 - 數據分析與可視化
-
+![Plot1](https://github.com/Yinnnn94/FastMCP/blob/main/img/DB_Connect/Plot_Upload.png)
+![Plot2](https://github.com/Yinnnn94/FastMCP/blob/main/img/DB_Connect/Plot_Upload2.png)
 ### 3. 💬 通用聊天機器人
 一般性的 AI 聊天機器人，提供智能對話功能。
 - 自然語言對話
